@@ -2,32 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #DADADA;
+}
+body, html {
+  height: 100%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+input[type="text"], textarea {
+  background-color: none !important;
+}
+
+.container {
+  max-width: 85vw;
+  height: 95vh;
+  background-color: #ececec;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.login-title{
+  font-size: 4rem;
+  font-weight:400;
+  color:#8d8d8d;
+  text-align: left;
+}
+
+.login-span {
+  color:#8d8d8d;
+  position: absolute;
+  bottom: 50px;
+}
+
+.login-container{
+  background-color: #fff;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding:50px
+}
+
+.login-logo{
+  height: 120px;
+}
+
+.login-button {
+  background: rgb(145,107,228);
+  background: linear-gradient(180deg, rgba(145,107,228,1) 26%, rgba(13,175,187,1) 82%);
+  color: #fff;
+  max-width: 280px;
+  width: 100%;
+  padding:10px 20px;
+  border-radius: 8px;
+  transition: all ease-in-out 0.5s;
+}
+
+.login-button:hover {
+  background: linear-gradient(180deg, rgba(145,107,228,1) 16%, rgba(13,175,187,1) 72%);
+}
+
+.input-container{
+  min-width: 380px;
+  margin:20px 0px;
+  position: relative;
+  border: 1px solid #4e4e4e;
+  background-color: none;
+  border-radius: 8px;
+  padding:10px;
+}
+
+.input-personalized{
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.topBar{
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top:0;
+  border-bottom: 12px solid #ececec;
+}
+.avatar-image{
+  height: 75px;
+  border-radius: 50%;
+}
+.table-rows{
+  transition: ease-in-out all 0.2s;
+}
+.table-rows:hover {
+  background-color: #eeeeee;
+}
+.basic-button {
+  max-width: 180px;
+  height:50px;
+  width: 100%;
+  padding:5px 15px;
+  border-radius: 8px;
+  background-color: rgba(145,107,228,1);
+  color: #fff;
+  transition: ease-in-out all 0.2s;
+}
+
+.basic-button:hover{
+  background-color: rgb(165, 134, 233);
+
 }
