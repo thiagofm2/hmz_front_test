@@ -25,6 +25,15 @@ export default function ModalUser(props: Props) {
         })
         .then((response) => {
             console.log(response);
+            props.setIsDialogOpen(false);
+        });
+    };
+
+    const deleteUser = async (idUser: number) => {
+        await axios.delete(`https://reqres.in/api/users/${idUser}`)
+        .then((response) => {
+            console.log(response);
+            props.setIsDialogOpen(false);
         });
     };
 
@@ -53,11 +62,6 @@ export default function ModalUser(props: Props) {
                             value={props.uniqueUser.email}
                             onChange={(e: any) => props.setUniqueUser({ ...props.uniqueUser, email: e.target.value })}
                         />
-                        <Button 
-                        onClick={() => { EditUser(props.uniqueUser.id)}}
-                        className="basic-button">
-                            Atualizar
-                        </Button>
                     </div>
                     <div className="flex items-center w-1/2 flex-col">
                         <Input 
@@ -68,6 +72,18 @@ export default function ModalUser(props: Props) {
                             onChange={(e: any) => props.setUniqueUser({ ...props.uniqueUser, last_name: e.target.value })}
                         />
                     </div>
+                </div>
+                <div className="flex justify-between w-full">
+                    <Button 
+                    onClick={() => { deleteUser(props.uniqueUser.id)}}
+                    className="delete-button">
+                        Deletar
+                    </Button>
+                    <Button 
+                    onClick={() => { EditUser(props.uniqueUser.id)}}
+                    className="basic-button">
+                        Atualizar
+                    </Button>
                 </div>
             </DialogContent>
         </Dialog>

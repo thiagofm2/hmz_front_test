@@ -90,7 +90,7 @@ body, html {
   background-color: #fff;
   width: 100%;
   height: 50px;
-  z-index: 99;
+  z-index: 10;
   position: absolute;
   top:0;
   border-bottom: 12px solid #ececec;
@@ -116,7 +116,25 @@ body, html {
   transition: ease-in-out all 0.2s;
 }
 
+.delete-button {
+  max-width: 180px;
+  height:50px;
+  width: 100%;
+  padding:5px 15px;
+  border-radius: 8px;
+  background-color: rgb(146, 12, 12);
+  color: #fff;
+  transition: ease-in-out all 0.2s;
+}
+
+
 .basic-button:hover{
   background-color: rgb(165, 134, 233);
 
+}
+
+
+.toast-error {
+  background-color: #b60d29;
+  color:#ffff
 }

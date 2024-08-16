@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import logo from '../../../public/logo.png';
 import Input from '../components/input';
 import { Button } from '@/components/ui/button';
+import { toast } from "sonner"
 
 
 export default function Login() {
@@ -22,6 +23,7 @@ export default function Login() {
         })
         .catch((error) => {
             console.log(error);
+            toast("Credenciais inválidas.")
         })
     };
 
